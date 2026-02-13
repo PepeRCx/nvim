@@ -1,6 +1,29 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "vtsls", "eslint" }
-vim.lsp.enable(servers)
+local on_attach = function(client, bufnr)
+  require("nvchad.configs.lspconfig").on_attach(client, bufnr)
 
--- read :h vim.lsp.config for changing options of lsp servers 
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end,
+    })
+  end
+end
+
+local on_init = require("nvchad.configs.lspconfig").on_init
+local capabilities = require("nvchad.configs.lspconfig").capabilities
+
+local servers = { "html", "cssls", "vtsls" }
+
+for _, lsp in ipairs(servers) do
+  vim.lsp.config(lsp, {
+    on_attach = on_attach,
+    on_init = on_init,
+    capabilities = capabilities,
+  })
+end
+
+vim.lsp.enable(servers)
