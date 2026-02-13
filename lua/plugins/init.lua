@@ -13,6 +13,25 @@ return {
     end,
   },
 
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          keymap = {
+            accept = "<C-j>",
+            next = "<C-]>",
+            prev = "<C-p>",
+            dismiss = "<C-e>"
+          },
+        },
+      })
+    end,
+  },
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
