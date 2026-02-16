@@ -32,6 +32,17 @@ return {
       })
     end,
   },
+
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "gopls",
+        "goimports",
+        "gofumpt",
+      }
+    }
+  }
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
