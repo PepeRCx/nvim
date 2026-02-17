@@ -42,6 +42,11 @@ return {
         "gofumpt",
       }
     }
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = require "configs.nvimtree"
   }
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
