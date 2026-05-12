@@ -16,7 +16,7 @@ end
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local servers = { "html", "cssls", "vtsls", "gopls" }
+local servers = { "html", "cssls", "vtsls" }
 
 for _, lsp in ipairs(servers) do
   vim.lsp.config(lsp, {
