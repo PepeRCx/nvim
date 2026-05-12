@@ -37,6 +37,8 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "vtsls",
+        "eslint_d"
       }
     }
   },
