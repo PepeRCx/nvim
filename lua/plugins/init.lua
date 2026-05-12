@@ -18,7 +18,7 @@ return {
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
-      require("copilot").setup({
+      require("copilot").setup {
         suggestion = {
           enabled = true,
           auto_trigger = true,
@@ -26,10 +26,10 @@ return {
             accept = "<C-j>",
             next = "<C-]>",
             prev = "<C-p>",
-            dismiss = "<C-e>"
+            dismiss = "<C-e>",
           },
         },
-      })
+      }
     end,
   },
 
@@ -38,15 +38,15 @@ return {
     opts = {
       ensure_installed = {
         "vtsls",
-        "eslint_d"
-      }
-    }
+        "eslint_d",
+      },
+    },
   },
 
   {
     "nvim-tree/nvim-tree.lua",
-    opts = require "configs.nvimtree"
-  }
+    opts = require "configs.nvimtree",
+  },
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
