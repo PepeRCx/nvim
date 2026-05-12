@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre", -- uncomment for format on save
     opts = require "configs.conform",
   },
 
@@ -38,7 +38,7 @@ return {
     opts = {
       ensure_installed = {
         "vtsls",
-        "eslint_d",
+        "biome",
       },
     },
   },
