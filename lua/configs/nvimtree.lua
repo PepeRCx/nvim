@@ -1,5 +1,12 @@
 return {
   view = {
-    side = "right"
+    side = "right",
+  },
+  renderer = {
+    icons = {
+      show = {
+        folder = false,
+      },
+    },
   },
 }
