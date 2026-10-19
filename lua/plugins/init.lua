@@ -39,6 +39,22 @@ return {
       ensure_installed = {
         "vtsls",
         "biome",
+        "gopls",
+        "gofumpt",
+        "goimports",
+      },
+    },
+  },
+
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_bt_ft = {
+        go = { "goimports", "gofumpt" }
+      },
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_fallback = true,
       },
     },
   },
