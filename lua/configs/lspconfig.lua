@@ -7,7 +7,7 @@ end
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local servers = { "html", "cssls", "vtsls" }
+local servers = { "html", "cssls", "vtsls", "gopls" }
 
 for _, lsp in ipairs(servers) do
   vim.lsp.config(lsp, {
@@ -16,5 +16,18 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   })
 end
+
+vim.lsp.config("gopls", {
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gowork", "gotmpl" },
+  settings = {
+    gopls = {
+      analyses = { unusedparams = true },
+      staticcheck = true,
+      completeUnimported = true,
+      usePlaceholders = true,
+    },
+  },
+})
 
 vim.lsp.enable(servers)
