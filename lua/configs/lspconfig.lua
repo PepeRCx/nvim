@@ -7,7 +7,7 @@ end
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local servers = { "html", "cssls", "vtsls", "gopls" }
+local servers = { "html", "cssls", "vtsls", "gopls", "pyright", "ruff" }
 
 for _, lsp in ipairs(servers) do
   vim.lsp.config(lsp, {
@@ -28,6 +28,15 @@ vim.lsp.config("gopls", {
       usePlaceholders = true,
     },
   },
+})
+
+vim.lsp.config("ruff", {
+  on_attach = function(client, bufnr)
+    if client.name == "ruff" then
+      client.server_capabilities.hoverProvider = false
+    end
+    on_attach(client, bufnr)
+  end,
 })
 
 vim.lsp.enable(servers)
