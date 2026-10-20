@@ -42,6 +42,9 @@ return {
         "gopls",
         "gofumpt",
         "goimports",
+        -- python
+        "pyright",
+        "ruff",
       },
     },
   },
@@ -50,7 +53,7 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_bt_ft = {
-        go = { "goimports", "gofumpt" }
+        go = { "goimports", "gofumpt" },
       },
       format_on_save = {
         timeout_ms = 500,
