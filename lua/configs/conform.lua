@@ -5,6 +5,7 @@ local options = {
     typescript = { "biome" },
     javascriptreact = { "biome" },
     typescriptreact = { "biome" },
+    xml = { "xmlformatter" },
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
