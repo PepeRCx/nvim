@@ -52,7 +52,7 @@ return {
   {
     "stevearc/conform.nvim",
     opts = {
-      formatters_bt_ft = {
+      formatters_by_ft = {
         go = { "goimports", "gofumpt" },
       },
       format_on_save = {
