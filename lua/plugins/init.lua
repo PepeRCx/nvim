@@ -39,6 +39,7 @@ return {
       ensure_installed = {
         "vtsls",
         "biome",
+        -- go
         "gopls",
         "gofumpt",
         "goimports",
