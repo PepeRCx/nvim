@@ -67,8 +67,23 @@ return {
 
   {
     "nvim-tree/nvim-tree.lua",
-    opts = require "configs.nvimtree",
+    opts = function()
+      local conf = require "configs.nvimtree"
+
+      conf.renderer = conf.renderer or {}
+      conf.renderer.icons = conf.renderer.icons or {}
+      conf.renderer.icons.show = conf.renderer.icons.show or {}
+
+      conf.renderer.icons.show.file = false
+      conf.renderer.icons.show.folder = false
+
+      conf.renderer.indent_markers = conf.renderer.indent_markers or {}
+      conf.renderer.indent_markers.enable = true
+
+      return conf
+    end,
   },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
