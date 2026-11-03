@@ -80,6 +80,8 @@ return {
       conf.renderer.indent_markers = conf.renderer.indent_markers or {}
       conf.renderer.indent_markers.enable = true
 
+      conf.renderer.indent_width = 1
+
       return conf
     end,
   },
