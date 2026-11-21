@@ -71,6 +71,11 @@ return {
       local conf = require "configs.nvimtree"
 
       conf.renderer = conf.renderer or {}
+
+      conf.renderer.root_folder_label = function(path)
+        return "/" .. vim.fn.fnamemodify(path, ":t")
+      end
+
       conf.renderer.icons = conf.renderer.icons or {}
       conf.renderer.icons.show = conf.renderer.icons.show or {}
 
